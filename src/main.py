@@ -161,10 +161,6 @@ if dday_date != None:
 name += name_suffix
 name += get_today_name()
 
-if(contact['firstName'] == name):
-    print('Contact name is already %s' % name)
-    exit(0)
-
 contact['lastName'] = ""
 contact['firstName'] = name
 update_contacts(icloud.contacts, contact)
