@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  namebyday:
+    image: ghcr.io/danieluhm2004/namebyday:1.0.0
+    container_name: NameByDay
+    volumes:
+      - sessions:/app/sessions
+    env_file:
+      - .env
+
+volumes:
+  sessions:
+    external: true
