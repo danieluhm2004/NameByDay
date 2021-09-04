@@ -28,7 +28,12 @@ NBD_NAME_SATURDAY="💜" #토요일 (optional)
 NBD_DDAY_DATE="2021-07-08" #DDAY(optional)
 ```
 
-위처럼 입력하여, `.env` 파일에 저장합니다. \*\*다만, 전화번호
+위처럼 입력하여, `.env` 파일에 저장합니다. **전화번호의 경우, 포멧이 조금식 다릅니다. 아래 형식 중 하나일 수 있습니다.**
+
+- 010-0000-0000
+- +82 00 0000 0000
+- +82 00-0000-0000
+- 01000000000
 
 ## 도커로 실행
 
@@ -95,3 +100,34 @@ crontab -e
 `<프로젝트 위치>`부분을 `docker-compose.yaml`을 설정한 디렉토리로 지정합니다.
 
 이제, ~~당신은 여자친구의 기념일을 놓치지 않을 수 있습니다.~~ 매요일 새로운 이름으로 친한 사람의 이름을 저장할 수 있습니다.
+
+## 오류별 대처 방안
+
+### NBD_ICLOUD_EMAIL and NBD_ICLOUD_PASSWORD and NBD_ICLOUD_PHONE_NUMBER environment are required.
+
+환경변수가 제대로 설정되지 않은 것 같습니다. 환경변수를 다시 설정해보세요.
+
+### Failed to verify security code
+
+애플 2차 인증 코드를 잘못 입력한 것 같습니다. 다시 시도해보세요.
+
+### Failed to request trust. You will likely be prompted for the code again in the coming weeks
+
+자동 로그인 기능을 사용할 수 없습니다. 이럴 경우, 로그아웃이 되어 갑자기 안되는 상황이 발생할 수 있습니다.
+
+### Failed to send verification code
+
+인증 요청을 발송하지 못했습니다. 잠시 후 다시 시도해보세요.
+
+### Failed to verify verification code
+
+애플 2차 인증 코드를 잘못 입력한 것 같습니다. 다시 시도해보세요.
+
+### Cannot find contact by phone number
+
+해당 전화번호의 연락처를 찾을 수 없습니다. 연락처 포멧을 아래와 같은 포멧으로 다양하게 시도해보세요.
+
+- 010-0000-0000
+- +82 00 0000 0000
+- +82 00-0000-0000
+- 01000000000
